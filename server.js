@@ -5,8 +5,8 @@ const http = require('http');
 const PORT = process.env.PORT || 3030;
 
 const ENDPOINTS = {
-  test: { host: 'mydata-dev.azure-api.net', path: '/SendInvoices' },
-  prod: { host: 'mydata.aade.gr',           path: '/sendInvoices' },
+  test: { host: 'mydataapidev.aade.gr', path: '/SendInvoices' },
+  prod: { host: 'mydataapidev.aade.gr', path: '/SendInvoices' },
 };
 
 function httpsPost({ host, path, headers, body }) {
