@@ -1,0 +1,9 @@
+{
+  "name": "mydata-proxy",
+  "version": "1.0.0",
+  "description": "ΑΑΔΕ myDATA proxy server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
