@@ -1,4 +1,3 @@
-// server.js — myDATA Proxy για Railway
 const https = require('https');
 const http = require('http');
 
@@ -26,7 +25,6 @@ function httpsPost({ host, path, headers, body }) {
 }
 
 const server = http.createServer(async (req, res) => {
-  // CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, aade-user-id, Ocp-Apim-Subscription-Key, x-env');
@@ -63,7 +61,9 @@ const server = http.createServer(async (req, res) => {
         },
         body,
       });
+      // Log the full response for debugging
       console.log(`[${new Date().toISOString()}] ${env.toUpperCase()} → HTTP ${result.status}`);
+      console.log(`RESPONSE: ${result.body}`);
       res.writeHead(result.status, { 'Content-Type': 'application/xml' });
       res.end(result.body);
     } catch (err) {
